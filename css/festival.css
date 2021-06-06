@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+body{margin: 0 auto;}
+
+/* common layout */
+#content{text-align: center; width: 100%; margin: 80px auto;}
+.tit_top{font-weight: 700; font-size: 48px; padding-bottom: 5px; color:#bd4848;}
+.sub_tit{color: #b8b8b8; font-size: 20px; margin-bottom: 20px; font-weight: 400;}
+.m80{margin: 80px auto;}
+.inner{max-width: 1280px;}
+.pb_50{padding-bottom: 50px; font-family: "맑은 고딕", "Malgun Gothic", "나눔고딕", NanumGothic, sans-serif;}
+
+#content .title_bg{position: absolute; top: 0; left: 0; width: 100%; height: 450px;background: url("../images/06_festival/sub/fest_01.jpg") no-repeat 50% 65%; background-size: cover;}
+#content .tit_top{font-size: 50px; font-weight: 700; background: none; color: #bd4848;}
+
+/* #cnt2 */
+#cnt2{margin-top: 500px;}
+#cnt2 p:last-child{line-height: 1.5;}
+
+/* #cnt3 */
+#cnt3 p:first-of-type{line-height: 1.5;}
+#cnt3 .pb_50{padding-bottom: 10px;}
+
+#areaTab{position: relative; height: 650px;}
+#cnt3 p:last-of-type{margin-bottom: 80px;}
+#cnt3 .tab{left: 120px; text-align: center; width: 200px; height: 60px; line-height: 60px; background: #e2e2e2; border-radius: 50px; cursor: pointer; font-size: 18px; font-weight: 400;}
+#cnt3 .tab + .tab{margin-top: 50px;}
+#cnt3 .tabpanel{width: 100%; height: 98px;position: relative;}
+#cnt3 .tabpanel img{position: absolute; top: -450px; left: 300px; width: 980px; height: 522px;}
+
+
+#areaTab .tab:hover, #festTab .tab:focus, #areaTab .tab.active{background: #bd4848; color: #fff;}
+#areaTab .tab:focus{outline: 1px solid #000;}
+
+#areaTab .tabpanel{display: none;}
+#areaTab .tabpanel.active{display: block;}
+
+
+/* #cnt4 */
+#festTab > ul{height: 80px; padding-bottom: 50px; margin: 30px 240px;}
+#cnt4 .tab{float: left; width: 380PX; height: 80px; line-height: 80px; background: #e2e2e2; border-radius: 50px; cursor: pointer; font-size: 24px; }
+#cnt4 .tab + .tab{margin-left: 40px;}
+#cnt4 .tabpanel ul li{width: 100%; height: 350px; text-align: left; position: relative;}
+#cnt4 .tabpanel ul li h4{position: absolute; top: 30%; font-size: 30px; color: #bd4848;}
+#cnt4 .tabpanel ul li p{position: absolute; top: 50%; font-size: 18px;}
+#cnt4 .tabpanel ul li img{width: 620px; height: 330px;}
+#cnt4 .tabpanel ul li .a_l{left: 55%;}
+#cnt4 .tabpanel ul li .a_r{right: 55%; text-align: right;}
+
+
+
+#festTab .tab:hover, #festTab .tab:focus, #festTab .tab.active{background: #bd4848; color: #fff;}
+#festTab .tab:focus{outline: 1px solid #000;}
+
+#festTab .tabpanel{display: none;}
+#festTab .tabpanel.active{display: block;}

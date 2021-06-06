@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고구려 대학교 도서관</title>
+  <link rel="icon" href="images/01_common/kgr_logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/swiper-bundle.css">
+  <link rel="stylesheet" href="../css/library.css">
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/library_common.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/gsap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      // swiper 스크립트를 호출해서 사용하기
+      const swiper1 = new Swiper('#cnt1 .swiper-container', {
+        loop: true, // => 자동실행이면 무한 반복이 된다
+        centeredSlides: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          // when window width is >= 1920px
+          1920: {
+            slidesPerView: 5,
+            // spaceBetween: 20
+          },
+          // when window width is >= 1330px
+          1330: {
+            slidesPerView: 3,
+            spaceBetween: 30
+          }
+        },
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        autoplay: {
+          delay: 2000, //1초=1000
+          disableOnInteraction: false, //스와이프 후에 자동실행 비활성화를 차단(자동실행 유지)
+        },
+      });
+
+      //정지와 재생 스크립트 추가
+      $('#cnt1 .btn_stop').on('click', function () {
+        $(this).hide().siblings('button').show();
+        swiper1.autoplay.stop();
+      });
+      $('#cnt1 .btn_play').on('click', function () {
+        $(this).hide().siblings('button').show();
+        swiper1.autoplay.start();
+      });
+
+      $('#cnt1 .swiper-slide a').on('click', function () {
+        var tgIdx = $(this).parent().data('swiper-slide-index');
+
+        $('#cnt1 .btn_stop').trigger('click'); //슬라이더 중 하나를 클릭하면 자동실행 멈추기
+        $('#cnt1 .swiper-pagination span').eq(tgIdx).click();
+
+        // loop 하지 않는 경우
+        // var tgNum = $(this).parent().index();
+        // $('#cnt1 .swiper-pagination span').eq(tgNum).click();  
+        return false;
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="skip">
+    <a href="#content">본문 바로가기</a>
+  </div>
+
+  <header id="header">
+    <h1><a href="#">고구려 대학교 도서관</a></h1>
+    <div class="sch_box p_r">
+      <label for="search" class="blind">검색어 입력</label>
+      <input type="text" id="search" placeholder="검색어를 입력하세요">
+      <a href="../fix.html">
+        <span class="blind">검색</span>
+      </a>
+    </div>
+    <div class="util d_f">
+      <a href="../fix.html" class="btn_my">
+        <span class="blind">My Library</span>
+      </a>
+      <a href="" class="btn_all">
+        <span class="blind">전체메뉴 열기</span>
+      </a>
+      <nav id="gnb">
+        <h2 class="blind">주메뉴</h2>
+        <ul class="d_f">
+          <li>
+            <a href="../fix.html">MY LIBRARY</a>
+            <ul>
+              <li><a href="../fix.html">내 대출 현황</a></li>
+              <li><a href="../fix.html">내 정보 수정</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../fix.html">SEARCH</a>
+            <ul>
+              <li><a href="../fix.html">통합 검색</a></li>
+              <li><a href="../fix.html">도서 검색</a></li>
+              <li><a href="../fix.html">교육자료 검색</a></li>
+              <li><a href="../fix.html">디지털자료 검색</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../fix.html">SERVICE</a>
+            <ul>
+              <li><a href="../fix.html">원문 복사 서비스</a></li>
+              <li><a href="../fix.html">서식 자료실</a></li>
+              <li><a href="../fix.html">도서 대출 현황</a></li>
+              <li><a href="../fix.html">희망 바구니</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../fix.html">INFORMATION</a>
+            <ul>
+              <li><a href="../fix.html">공지사항</a></li>
+              <li><a href="../fix.html">분실물 습득</a></li>
+              <li><a href="../fix.html">Q&amp;A</a></li>
+              <li><a href="../fix.html">건의함</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../fix.html">ABOUT</a>
+            <ul>
+              <li><a href="../fix.html">소개</a></li>
+              <li><a href="../fix.html">이용안내</a></li>
+              <li><a href="../fix.html">규정</a></li>
+              <li><a href="../fix.html">오시는 길</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="gnb_bg"></div>
+    </div>
+
+  </header>
+
+  <section id="content">
+    <div id="cnt1">
+      <h2>이달의 추천 도서</h2>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="../fix.html"><img src="../images/07_library/bookcover/cover01.jpg" alt="실격당한 자들을 위한 변론"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="../fix.html"><img src="../images/07_library/bookcover/cover02.jpg" alt="우아한 연인"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="../fix.html"><img src="../images/07_library/bookcover/cover03.jpg" alt="돈키호테"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="../fix.html"><img src="../images/07_library/bookcover/cover04.jpg" alt="결심만 하는 당신에게"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="../fix.html"><img src="../images/07_library/bookcover/cover05.jpg" alt="미드나잇 라이브러리"></a>
+          </div>
+        </div>
+
+        <!-- 제어버튼 스타일 넣어주세요 -->
+        <div class="controller">
+          <div class="swiper-pagination"></div>
+
+          <div class="play_stop">
+            <button class="btn_stop" type="button">
+              <span class="blind">일시정지</span>
+            </button>
+            <button class="btn_play" type="button">
+              <span class="blind">자동실행</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- cnt1 -->
+
+    <div id="cnt2">
+      <div class="d_f">
+        <div class="zone1 h400 p_r">
+          <h3 class="p_a">공지사항</h3>
+          <div class="sub_bg1 h340 p_a">
+            <ul>
+              <li class="p_r"><a href="../fix.html" class="d_f p_r"><span>[고정]고구려 대학교 SNS 계정 안내</span> <span>2021.03.02</span></a>
+              </li>
+              <li><a href="../fix.html" class="d_f p_r"><span>장수관 OPEN 기념 EVENT(05.11~05.31)</span> <span>2021.05.11</span></a>
+              </li>
+              <li><a href="../fix.html" class="d_f p_r"><span>분실물 습득 안내(21.05.10 Update)</span> <span>2021.05.10</span></a></li>
+              <li><a href="../fix.html" class="d_f p_r"><span>가정의 달 도서관 EVENT 안내</span> <span>2021.05.07</span></a></li>
+              <li><a href="../fix.html" class="d_f p_r"><span>도서관 확장 완공 및 장수관 OPEN 안내</span> <span>2021.05.01</span></a></li>
+              <li><a href="../fix.html" class="d_f p_r"><span>중간고사 기간(04.21~05.10) 독서실 운영...</span> <span>2021.04.21</span></a>
+              </li>
+              <li><a href="../fix.html" class="d_f p_r"><span>2021학년도 개학 및 도서관 운영시간 안내</span> <span>2021.02.28</span></a></li>
+            </ul>
+          </div>
+          <a href="../fix.html" class="p_a" >더보기</a>
+        </div>
+        <div class="zone2 h400 p_r">
+          <h3 class="p_a">도서관 자리 현황 및 예약</h3>
+          <div class="sub_bg2 h340  p_a">
+            <a href=""><img src="../images/07_library/background/seat.jpg" alt="91석 중 15석 사용 가능하며 A2, B2, C2, C3, C8, D2, D3, D8, E2, E3, E11, F2, F3, G2, G3번 좌석 사용 가능"></a>
+          </div>
+          <a href="../fix.html" class="p_a">예약하기</a>
+        </div>
+      </div>
+      <div class="zone3 h400 p_r">
+        <h3 class="p_a">도서관 SNS 소식</h3>
+        <div class="sub_bg3 h340  p_a">
+          <ul class="sns d_f">
+            <li>
+              <a href="https://www.facebook.com/">
+                <p>
+                  #슬기로운_독서생활 #고구려대도서관
+                  #주몽관 #독서이벤트 #이달의독서왕
+                </p>
+              </a>
+
+            </li>
+            <li>
+              <a href="https://instagram.com/">
+                <p>
+                  #독서 #갬성 #고구려대학교
+                  #고구려대_도서관 #장수관
+                  #독서이벤트 #많이오세요
+                </p>
+              </a>
+
+            </li>
+            <li>
+              <a href="https://www.twitter.com/">
+                <p>
+                  도서관 열람실 빌런 등장!!
+                  #고구려대 #도서관 #빌런
+                </p>
+              </a>
+
+            </li>
+            <li>
+              <a href="https://www.youtube.com/">
+                <p>
+                  #고구려대학교도서관 #장수관
+                  #마참내 #오픈 #오픈이벤트중
+                </p>
+              </a>
+
+            </li>
+          </ul>
+        </div>
+        <a href="../fix.html" class="p_a">더보기</a>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="btn">
+      <ul class="d_f">
+        <li>
+          <a href="http://www.ipacademy.net/servlet/MainController?sd=PS&ms=1" target="_blank"
+            title="새 창 열림">국가지식포털</a>
+        </li>
+        <li>
+          <a href="https://www.nl.go.kr/" target="_blank" title="새 창 열림">국립중앙도서관</a>
+        </li>
+        <li>
+          <a href="https://www.nanet.go.kr" target="_blank" title="새 창 열림">국회도서관</a>
+        </li>
+        <li>
+          <a href="https://www.keris.or.kr" target="_blank" title="새 창 열림">KERIS</a>
+        </li>
+        <li>
+          <a href="http://www.kla.kr/jsp/main.do" target="_blank" title="새 창 열림">한국도서관협회</a>
+        </li>
+        <li>
+          <a href="../index.html" target="_blank" title="새 창 열림">고구려대학교</a>
+        </li>
+      </ul>
+    </div>
+    <div class="site_map d_f">
+      <h3 class="blind">사이트맵</h3>
+      <ul>
+        <li>
+          <h4>MY LIBRARY</h4>
+        </li>
+        <li>
+          <ul>
+            <li><a href="../fix.html">내 대출 현황</a></li>
+            <li><a href="../fix.html">내 정보 수정</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <h4>SEARCH</h4>
+        </li>
+        <li>
+          <ul>
+            <li><a href="../fix.html">통합 검색</a></li>
+            <li><a href="../fix.html">도서 검색</a></li>
+            <li><a href="../fix.html">교육자료 검색</a></li>
+            <li><a href="../fix.html">디지털자료 검색</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <h4>SERVICE</h4>
+        </li>
+        <li>
+          <ul>
+            <li><a href="../fix.html">원문 복사 서비스</a></li>
+            <li><a href="../fix.html">서식 자료실</a></li>
+            <li><a href="../fix.html">도서 대출 현황</a></li>
+            <li><a href="../fix.html">희망 바구니</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <h4>INFORMATION</h4>
+        </li>
+        <li>
+          <ul>
+            <li><a href="../fix.html">공지사항</a></li>
+            <li><a href="../fix.html">분실물 습득</a></li>
+            <li><a href="../fix.html">Q&amp;A</a></li>
+            <li><a href="../fix.html">건의함</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <h4>ABOUT</h4>
+        </li>
+        <li>
+          <ul>
+            <li><a href="../fix.html">소개</a></li>
+            <li><a href="../fix.html">이용안내</a></li>
+            <li><a href="../fix.html">규정</a></li>
+            <li><a href="../fix.html">오시는 길</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="address p_r">
+      <address>58280 전라남도 나주시 다시면 백호로 125 고구려대학교 도서관</address>
+      <p>TEL 061)330-7371</p>
+      <p>FAX 061)330-7376</p>
+      <p>MAIL sju@kgrc.ac.kr</p>
+      <p>Copyright &copy; KOGURYEO COLLEGE LIBRARY. All Right Reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+#fix{width: 100%; height: 946px; background: #1A3851 url("../images/01_common/fix.png") no-repeat center top; margin: 0 auto; text-align: center; }
+#fix h1{font-size: 70px; padding-top: 80px; color: #ff8000;}
+#fix p{font-size: 30px; color: #ffffff;}
+#fix ul{width: 1280px; height: 160px; margin: 20px auto; flex-wrap: wrap; flex-direction: column; line-height: 1.5; align-content: space-between; justify-content: space-between;}
+#fix ul li a{font-size: 30px; color: #f1bcbc;}
+#fix ul li a:hover, #fix ul li a:focus{color: #ff8000; border-bottom: 2px solid #ff8000;}

@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/* #content */
+#content{margin-bottom: 200px;}
+.inner{width: 1180px; margin: 0 auto; font-weight: 400;}
+.inner h3{padding: 80px 0; font-size: 50px; text-align: center;}
+#visit_tab .tablist{text-align: center;}
+#visit_tab .tablist li{position: relative; display: inline-block; width: 33%; background: #f1f2f7; font-weight: 500;}
+#visit_tab .tablist li:hover{cursor: pointer; }
+#visit_tab .tablist li span{font-size: 20px; padding: 15px 0; display: block;}
+#visit_tab .tablist li.active span{color: #fff; background: #BD4848;}
+#visit_tab .tabpanel{display: none;}
+#visit_tab .tabpanel.active{display: block;}
+#map{width: 100%; height: 450px; margin-top: 40px;} 
+.metro h4, .bus h4{font-size: 30px; font-weight: 400; margin: 40px 0 20px 0;}
+.table_wrap table{width: 100%;}
+.table_wrap tr{border-top: 1px solid #333;}
+.table_wrap th{padding: 10px; background: #f1f2f7; font-weight: 500;}
+.table_wrap td{padding: 15px 10px;}
+.table_wrap th, .table_wrap td{border-right: 1px solid #dddfe5; border-bottom: 1px solid #dddfe5; text-align: center;}
+.table_wrap th:last-child, .table_wrap td:last-child{border-right: none;}
+.table_wrap ul{margin: 10px 0;}
+.table_wrap ul li{line-height: 2;}
+.schbus h4{margin: 40px 0; font-size: 30px; font-weight: 400;}
+.schbus_wrap{display: flex;}
+.schbus_box{width: 50%; padding-right: 60px; box-sizing: border-box;}
+.schbus_box:last-child{padding-left: 60px; padding-right: 0;}
+.schbus_box p{font-size: 20px; margin-bottom: 20px; font-weight: 500;}
+.schbus_box strong{font-weight: 600;}
+.car h4{border-bottom: 1px solid #333; font-size: 30px; font-weight: 400; margin-top: 40px; padding-bottom: 20px;}
+.car li{border-bottom: 1px solid #dbdee1; padding: 25px 25px 25px 0;}
+.car b{display: block; font-size: 20px; margin-bottom: 15px; font-weight: 600;}
+
+
+

@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/* #content */
+#content{margin-bottom: 200px;}
+.inner{width: 1180px; margin: 0 auto; font-weight: 400;}
+.inner h3{font-size: 50px; text-align: center; padding: 80px 0;}
+#history_tab .tablist{border-top: 5px solid #333; border-bottom: 1px solid #ccc;}
+#history_tab .tab{float: left; width: 33.3%; text-align: center; font-size: 20px; font-weight: 500;}
+#history_tab .tab:hover{cursor: pointer;}
+#history_tab .tab span{position: relative; display: block; padding: 17px 16px;}
+#history_tab .tab.active span{color: #BD4848;}
+#history_tab .tab span:before, #history_tab .tab span:after{position: absolute; content: ""; display: block; left: 50%; transform: translate(-50%);  border-radius: 50%; box-sizing: border-box;}
+#history_tab .tab span:before{width: 20px; height: 20px; bottom: -10px; border: 1px solid #ccc;}
+#history_tab .tab span:after{width: 10px; height: 10px; bottom: -5px; background: #222;}
+#history_tab .tab.active span:before{border: 1px solid #BD4848;}
+#history_tab .tab.active span:after{background: #BD4848;}
+#history_tab .tabpanel{display: none;}
+#history_tab .tabpanel.active{display: block;}
+.tabpanel .bg .sub_tit1{position: absolute; top: 20px; left: 50px; font-size: 45px; font-weight: 500;}
+.tabpanel .bg .sub_tit2{position: absolute; top: 40%; left: 5%; font-size: 28px; color: #fff;}
+.bg{position: relative; background: url(../images/04_history/history1.png) no-repeat center; height: 230px; margin-top: 50px; border-bottom-left-radius: 95px;} 
+.tabpanel .content{padding-top: 70px;}
+.tabpanel .content li{position: relative; width: 50%; margin-left: 50%; padding: 0 0 0 70px; box-sizing: border-box;}
+.tabpanel .content li:after{content: ""; display: block; position: absolute; right: -1px; top: 30px; width: 1px; height: 100%; background: #dadee1;}
+.tabpanel .content li:nth-child(odd):after{left: 0; right: auto;}
+.tabpanel .content li::before{position: absolute; content: ""; display: block; height: 1px; width: 30px; left: 0; top: 30px; background: #BD4848;}
+.tabpanel .content li:nth-child(even){margin-left: 0; padding: 0 70px 0 0; text-align: right;}
+.tabpanel .content li:nth-child(even) .year::after{right: -7px; left: auto;}
+.tabpanel .content li:nth-child(even)::before{right: 0; left: auto;}
+.tabpanel .content li .year{margin-bottom: 20px; font-size: 40px;}
+.tabpanel .content li .year::after{position: absolute; content: ""; width: 15px; height: 15px; border: 3px solid #BD4848; border-radius: 50%; box-sizing: border-box; left: -7px; top: 23px; z-index: 1; background: #fff;}
+.tabpanel .content li .month{position: relative; font-family: "맑은 고딕"; font-size: 18px; padding-left: 35px;}
+.tabpanel .content li .month + .month{margin-top: 15px;}
+.tabpanel .content li .month b{position: absolute; top: -4px; left: 0; font-size: 22px;}
+.tabpanel .content li:nth-child(even) .month{padding-right: 35px; padding-left: 0;}
+.tabpanel .content li:nth-child(even) .month b{position: absolute; top: -4px; right: 0;}
+#tabpanel2 .bg{background: url(../images/04_history/history2.png);}
+#tabpanel3 .bg{background: url(../images/04_history/history3.png);}
+
+

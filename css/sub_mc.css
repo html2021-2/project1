@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* 공통 클래스 */
+.white{color: #fff;}
+.skyblue{color: #a7c7e7;}
+.area{width: 1180px;margin: 0 auto;}
+.s_title{font-size: 19px;}
+.place{font-size: 17px;}
+.date{font-size: 17px;}
+
+#content{}
+.list_wrap{width: 1280px; margin: 100px auto; position: relative; overflow: hidden;}
+.list_wrap .tablist{height: 105px; position: absolute; top: 10px; left: 0; z-index: 200;}
+.list_wrap .tablist .tab{padding: 0 25px 0; font-size: 22px; color: #73615b;  font-weight: 700; cursor: pointer;}
+.list_wrap .tablist .tab.active{text-decoration: underline;}
+.list_wrap .tabpanel{padding-top: 100px; position: relative; display: none;}
+.list_wrap .tabpanel.active{display: block;}
+.list_wrap .swiper-container::before{content: ""; position: absolute; top: -100px; left: 0; width: 100%; height: 100px; background:#fff; z-index: 100;}
+.list_wrap .swiper-container{width: 100%; height: 652px; overflow: visible;}
+.list_wrap .swiper-slide ul{display: flex; flex-wrap: wrap; justify-content: space-between;}
+.list_wrap .swiper-slide ul li{width: 377px;}
+.list_wrap .swiper-slide ul li:nth-child(1), .list_wrap .swiper-slide ul li:nth-child(2), .list_wrap .swiper-slide ul li:nth-child(3){margin-bottom: 86px;}
+.list_wrap .swiper-slide ul li p{padding-top: 14px; height:18px; line-height: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+.list_wrap .swiper-slide ul li img{width: 377px; height: 251px;}
+.list_wrap .controller{position: absolute; top: -100px; right: 0;width: 269px; height: 51px; z-index:200;}
+.list_wrap .swiper-button-prev,
+.list_wrap .swiper-button-next, .list_wrap .btn_more{top:0%;width: 48px;height:51px; margin-top:0;z-index: 10;cursor: pointer;display: flex;align-items: center;justify-content: center;border: 1px solid #000;}
+.list_wrap .swiper-button-prev::after, .list_wrap .swiper-button-next::after{display: none;}
+.list_wrap .swiper-button-prev{left: 0;}
+.list_wrap .swiper-button-prev::before, .list_wrap .swiper-button-next::before{content: ""; display: block; border-left: 6px solid transparent; border-right:6px solid transparent;}
+.list_wrap .swiper-button-prev::before{border-bottom: 12px solid #000;}
+.list_wrap .swiper-button-next::before{border-top: 12px solid #000;}
+.list_wrap .swiper-button-next{left: 48px;}
+.list_wrap .btn_more{position: absolute; right: 0; width: 162px;}
+
+
+.slide_wrap{height: 1106px; margin: 100px auto; background: #cc5151; overflow: hidden; position: relative;}
+.slide_wrap .white{text-align: center;}
+.slide_wrap h3{padding: 54px 0 61px; font-size: 80px;}
+.slide_wrap strong{display: block; font-size: 47px; margin-bottom: 110px;}
+.slide_wrap .tablist{height: 20px; margin-bottom: 70px; display: flex; justify-content: center;}
+.slide_wrap .tab{height: 20px; margin: 0 16px; font-size: 20px; color: #fff; cursor: pointer;}
+.slide_wrap .tab.active{color:#a7c7e7; text-decoration: underline;}
+
+.slide_wrap .tabpanel{display: none;}
+.slide_wrap .tabpanel.active{display: block;}
+.slide_wrap .swiper-container{overflow: visible;}
+.slide_wrap .swiper-container::before, .slide_wrap .swiper-container::after{content: ""; position: absolute; top:0; width: 690px; height: 450px; background:#cc5151; z-index: 100;}
+.slide_wrap .swiper-container::before{right: 100%;}
+.slide_wrap .swiper-container::after{left:100%;}
+.slide_wrap .swiper-slide a{display: block; display: flex;}
+.slide_wrap .swiper-slide .txt_wrap{width: 50%; background: #fff; padding-left: 80px; box-sizing: border-box; padding-top: 52px;}
+.slide_wrap .swiper-slide .txt_wrap h4{color: #a7c7e7; font-size: 20px;}
+.slide_wrap .swiper-slide .txt_wrap .number{padding-top: 6px; padding-left: 295px; font-size: 122px; color: #a7c7e7;}
+.slide_wrap .swiper-slide .txt_wrap h5{padding-top: 95px; font-size: 30px; color: #000;}
+.slide_wrap .swiper-slide .txt_wrap .txt{color: #000; padding-top: 10px; line-height: 1.5;}
+
+.slide_wrap .controller{position: absolute; z-index: 200; top: 0; left: 0; width: 100%;}
+.slide_wrap .swiper-pagination-current{font-weight: 700; color: #a7c7e7;}
+.slide_wrap .swiper-pagination-fraction{top: 90px; font-size: 20px;bottom: auto;left: 680px; width: 150px; text-align:left;}
+.slide_wrap .swiper-button-prev, .slide_wrap .swiper-button-next {top: 172px; width: 106px;height: 106px;margin-top: 0; background: no-repeat center; background-size: contain;}
+.slide_wrap .swiper-button-prev{left: -138px; background-image:url("../images/09_notice/arrow-prev.png");}
+.slide_wrap .swiper-button-next{right: -138px; background-image:url("../images/09_notice/arrow-next.png");}
+.slide_wrap .swiper-button-prev::after, .slide_wrap .swiper-button-next::after{display: none;}
+
+.event_wrap h4{font-size: 80px; text-align: center; margin-bottom: 200px;}
+.event_list{flex-wrap: wrap;}
+.event_list li{width: 50%;padding-bottom: 100px;}
+.event_list a{display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;}
+.event_list a img{width: 330px; height: 200px;}
+.event_list .txt_box{padding-top: 40px; line-height: 20px; padding-left: 15px;}
+.event_list .txt_box h5{padding-bottom: 15px;}
+.event_list .txt_box p{padding: 0 0 15px;}
+
+.matri_area{width: 100%; height: 100vh; background:url("../images/08_guide/main_back.jpg") no-repeat center 40%; background-size: cover;}
+.matri_area .matri_wrap{width: 1180px; height: 300px; margin:0 auto; padding-top: 200px;}
+.matri_area .matri_wrap h3{font-size: 60px; margin-bottom: 30px; color: #fff;}
+.matri_area .matri_wrap .matri_list{border-top:4px solid #fff; border-bottom: 4px solid #fff; display: flex; padding: 40px 0 40px;}
+.matri_area .matri_wrap .matri_list li{width: 16.66%; height: 25px; text-align: center; font-size: 25px; color: #fff;}
+
+.icon_container{width: 100%; height: 630px; background:#fff;}
+.icon_container .icon_inner{width: 80%; height: 345px; margin: 0 auto; padding-top: 135px;}
+.icon_container .icon_inner .icon_list{display: flex;}
+.icon_container .icon_inner .icon_list li{width:25%; height: 345px; background:#a7c7e7; margin-right: 100px; position: relative;}
+.icon_container .icon_inner .icon_list li:last-child{margin-right: 0;}
+.icon_container .icon_inner .icon_list li a{display:inline-block; padding: 35px; font-size: 30px; color: #fff;}
+.icon_container .icon_inner .icon_list li a:nth-child(2){padding: 100px;}
+.icon_container .icon_inner .icon_list li img{width: 99px;height: 99px; position: absolute; bottom: 5px; right:10px;}

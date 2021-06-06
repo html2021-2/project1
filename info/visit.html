@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>찾아오는길</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sub_common.css">
+    <link rel="stylesheet" href="../css/visit.css">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/tab.js"></script>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=695a5c55fc17c4e1e18e0141bd05749c"></script>
+    <script>
+        $(document).ready(function () {
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(35.007783, 126.649091),
+                level: 3
+            };
+
+            var map = new kakao.maps.Map(container, options);
+            // 마커가 표시될 위치입니다 
+            var markerPosition = new kakao.maps.LatLng(35.007783, 126.649091);
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="skip">
+        <a href="#content">본문 바로가기</a>
+    </div>
+
+    <header id="header">
+        <h1 class="logo">
+            <a href="../index.html">
+                <span class="blind">고구려대학교</span>
+            </a>
+        </h1>
+        <div>
+            <nav id="gnb">
+                <h2 class="blind">주메뉴</h2>
+                <ul>
+                    <li><a href="">대학소개</a>
+                        <ul>
+                            <li><a href="../info/president.html">인사말</a></li>
+                            <li><a href="../info/history.html">대학연혁</a></li>
+                            <li><a href="../fix.html">대학비전</a></li>
+                            <li><a href="../fix.html">학교상징</a></li>
+                            <li><a href="../fix.html">연락처</a></li>
+                            <li><a href="../info/visit.html">찾아오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">학과소개</a>
+                        <ul>
+                            <li><a href="../major/dental.html">치위생과</a></li>
+                            <li><a href="../fix.html">곤충산업복지과</a></li>
+                            <li><a href="../fix.html">미용관광복지과</a></li>
+                            <li><a href="../fix.html">토목조경과</a></li>
+                            <li><a href="../fix.html">에너지복지과</a></li>
+                            <li><a href="../fix.html">유아교육과</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">대학생활</a>
+                        <ul>
+                            <li><a href="../fix.html">학생지원</a></li>
+                            <li><a href="../campus/festival.html">학교문화</a></li>
+                            <li><a href="../campus/notice.html">알림/참여</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">학사지원</a>
+                        <ul>
+                            <li><a href="../fix.html">학사일정</a></li>
+                            <li><a href="../fix.html">장학제도</a></li>
+                            <li><a href="../fix.html">학사 Q&amp;A</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">입학안내</a>
+                        <ul>
+                            <li><a href="../fix.html">수시 및 정시</a></li>
+                            <li><a href="../guide/matri.html" target="_blank" title="새 창 열림">입학 정보</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="search">
+            <a href="../fix.html">
+                <span class="blind">검색</span>
+            </a>
+        </div>
+    </header>
+
+    <section id="content">
+        <div class="title_bg info white">
+            <h2>학교소개</h2>
+            <nav class="breadcrumb" aria-label="사이트 이동 경로">
+                <ol class="d_f">
+                    <li>
+                        <a href="../index.html">HOME</a>
+                    </li>
+                    <li>학교소개</li>
+                    <li aria-current="page">찾아오시는길</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="inner">
+            <h3>찾아오시는길</h3>
+            <div id="visit_tab">
+                <ul class="clearfix tablist" role="tablist" aria-label="연혁 연도별">
+                    <li role="tab" aria-controls="tabpanel1" id="tab1" class="tab first">
+                        <span>대중교통 이용</span>
+                    </li>
+                    <li role="tab" aria-controls="tabpanel2" id="tab2" class="tab">
+                        <span>셔틀버스 이용</span>
+                    </li>
+                    <li role="tab" aria-controls="tabpanel3" id="tab3" class="tab last">
+                        <span>자가용 이용</span>
+                    </li>
+                    <div id="map"></div>
+                </ul>
+                <div role="tabpanel" aria-labelledby="tab1" id="tabpanel1" class="tabpanel">
+                    <div class="metro">
+                        <h4>지하철</h4>
+                        <div class="table_wrap">
+                            <table>
+                                <caption>
+                                    <p class="blind">지하철 운행표</p>
+                                </caption>
+                                <colgroup>
+                                    <col width="25%">
+                                    <col width="25%">
+                                    <col width="25%">
+                                    <col width="25%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>노선</th>
+                                        <th>하차역</th>
+                                        <th>연계버스</th>
+                                        <th>버스하차지점</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1호선</td>
+                                        <td>안양역</td>
+                                        <td>마을버스3번</td>
+                                        <td>정문</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2호선</td>
+                                        <td>사당역</td>
+                                        <td>11-1, 11-2, 9, 9-3</td>
+                                        <td>비산사거리</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3호선</td>
+                                        <td>인덕원역</td>
+                                        <td>4425, 11-1, 11-2, 11-3, 8, 8-1, 9-3, 51</td>
+                                        <td>비산사거리</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4호선</td>
+                                        <td>범계역 </td>
+                                        <td>6-2, 5-1(마을버스), 7</td>
+                                        <td>정문</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="bus">
+                        <h4>버스</h4>
+                        <div class="table_wrap">
+                            <table>
+                                <caption>
+                                    <p class="blind">버스 운행표</p>
+                                </caption>
+                                <colgroup>
+                                    <col width="25%">
+                                    <col width="25%">
+                                    <col width="25%">
+                                    <col width="25%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>운행방향</th>
+                                        <th>하차역</th>
+                                        <th>연계버스</th>
+                                        <th>버스하차지점</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>사당방면</td>
+                                        <td rowspan="6">비산사거리</td>
+                                        <td>11-1, 11-2, 9, 9-3</td>
+                                        <td rowspan="6">학교까지 도보로 약 5분소요</td>
+                                    </tr>
+                                    <tr>
+                                        <td>강남방면</td>
+                                        <td>541</td>
+                                    </tr>
+                                    <tr>
+                                        <td>잠실방면</td>
+                                        <td>11-3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>시흥방면</td>
+                                        <td>5713, 9, 9-3, 51, 5625, 5626</td>
+                                    </tr>
+                                    <tr>
+                                        <td>성남방면</td>
+                                        <td>태화상운(직행버스)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>안양시내</td>
+                                        <td>8, 8-1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>시외버스</td>
+                                        <td>학교 앞</td>
+                                        <td>900</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>마을버스</td>
+                                        <td></td>
+                                        <td>5-2, 6-2, 7</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" aria-labelledby="tab2" id="tabpanel2" class="tabpanel">
+                    <div class="schbus">
+                        <h4>통학버스 승차장 및 운행시간</h4>
+                        <div class="schbus_wrap">
+                            <div class="schbus_box">
+                                <p>4호선 길음역 → 정문</p>
+                                <div class="table_wrap">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>순서</th>
+                                                <th>1호차</th>
+                                                <th>2호차</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>10:20</td>
+                                                <td>10:40</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>11:20</td>
+                                                <td>11:40</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>12:45</td>
+                                                <td>13:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>13:45</td>
+                                                <td>14:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>14:45</td>
+                                                <td>15:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>15:45</td>
+                                                <td>16:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>16:45</td>
+                                                <td>17:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>17:45</td>
+                                                <td>18:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>18:45</td>
+                                                <td>19:15</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <ul>
+                                        <li>
+                                            <strong>탑승장소</strong>
+                                            : 4호선 길음역 3번 출구 50미터 전방 통학버스 승차장
+                                        </li>
+                                        <li>
+                                            <strong>운행시간</strong>
+                                            : 월~금 오전 08시 20분 ~ 10시 10분까지 5~10분 간격 운행(45인승 6대), 월~금 오전 10시 20분 ~ 19시
+                                            15분(45인승 2대)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="schbus_box">
+                                <p>정문 → 4호선 길음역</p>
+                                <div class="table_wrap">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>순서</th>
+                                                <th>1호차</th>
+                                                <th>2호차</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>11:40</td>
+                                                <td>12:05</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>13:00</td>
+                                                <td>13:30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>13:45</td>
+                                                <td>14:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>14:00</td>
+                                                <td>14:30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>15:00</td>
+                                                <td>15:30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>16:00</td>
+                                                <td>16:30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>16:45</td>
+                                                <td>17:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>17:00</td>
+                                                <td>17:30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>18:00</td>
+                                                <td>18:30</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <ul>
+                                        <li>
+                                            <strong>탑승장소</strong>
+                                            : 정문 건너편 통학버스 승차장
+                                        </li>
+                                        <li>
+                                            <strong>운행시간</strong>
+                                            : 월~금 오전 10시 40분 ~ 19시 30분(45인승 2대)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" aria-labelledby="tab3" id="tabpanel3" class="tabpanel">
+                    <div class="car">
+                        <h4>자가용</h4>
+                        <ul>
+                            <li>
+                                <b>하남JC 방면</b>
+                                서울외곽순환고속도로(10.7km, 강동대교) → 구리IC(구리.태릉) → 북부간선도로(10.0km, 하월곡) → 내부순환로(3.3km, 성산) →
+                                정릉IC(북악터널.국민대입구)
+                            </li>
+                            <li>
+                                <b>김포공항 방면</b>
+                                올림픽대로(7.4km, 월드컵경기장) → 성산대교 → 내부순환로(12.1km, 고가도로) → 정릉IC(정릉) → 정릉로(1.3km) → 내부순환로(0.6km,
+                                홍은.성산) → 정릉IC(북악터널.국민대입구)
+                            </li>
+                            <li>
+                                <b>한남IC 방면</b>
+                                한남대교 → 강변북로(2.4km, 잠실대교) → 동부간선도로(2.2km, 의정부) → 내부순환로(10.7km, 성산) → 정릉IC(북악터널.국민대입구)
+                            </li>
+                            <li>
+                                <b>의정부IC 방면</b>
+                                동부간선도로(7.4km, 강일) → 월릉IC(석계역) → 북부간선도로(3.9km, 하월곡) → 내부순환로(3.3km, 성산) → 정릉IC(북악터널.국민대입구)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//content -->
+
+    <footer id="footer" class="p_r">
+        <div class="wrap d_f">
+            <div id="block1">
+                <a href="index.html"><img src="../images/01_common/kgr_logo_long_white.png" alt="고구려 대학교"></a>
+            </div>
+            <div id="block2" class="f_block">
+                <p>58280 전라남도 나주시<br>
+                    다시면 백호로 125 고구려대학교<br>
+                    TEL : 061-330-7400<br>
+                    FAX : 061-335-7128<br>
+                    MAIL : master@kgrc.ac.kr</p>
+                <div class="icons">
+                    <a href="http://www.facebook.com/" title="페이스북"><img src="../images/01_common/icon_facebook.png"
+                            alt="페이스북"></a>
+                    <a href="http://www.instagram.com/" title="인스타그램"><img src="../images/01_common/icon_instagram.png"
+                            alt="인스타그램"></a>
+                    <a href="http://www.youtube.com/" title="유튜브"><img src="../images/01_common/icon_youtube.png"
+                            alt="유튜브"></a>
+                </div>
+                <p>KOGURYEO COLLEGE. All rights reserved</p>
+            </div>
+            <div id="block3" class="f_block">
+                <div class="family d_f p_r">
+                    <a href="" class="btn_fopen p_r" role="button">학과홈페이지 바로가기</a>
+                    <ul>
+                        <li><a href="../major/dental.html">치위생과</a></li>
+                        <li><a href="../fix.html">곤충산업복지과</a></li>
+                        <li><a href="../fix.html">미용관광복지과</a></li>
+                        <li><a href="../fix.html">토목조경과</a></li>
+                        <li><a href="../fix.html">에너지복지과</a></li>
+                        <li><a href="../fix.html">유아교육과</a></li>
+                    </ul>
+                    <a href="" class="btn_go">GO</a>
+                </div>
+                <div class="family d_f p_r">
+                    <a href="" class="btn_fopen p_r" role="button">부속기관 바로가기</a>
+                    <ul>
+                        <li><a href="../campus/library.html">도서관</a></li>
+                        <li><a href="../fix.html">정보전산원</a></li>
+                        <li><a href="../fix.html">생활관</a></li>
+                        <li><a href="../fix.html">어학원</a></li>
+                        <li><a href="../fix.html">평생교육원</a></li>
+                    </ul>
+                    <a href="" class="btn_go">GO</a>
+                </div>
+                <ul class="f_navitem1">
+                    <li><a href="../info/president.html">대학소개</a></li>
+                    <li><a href="../major/dental.html">학과소개</a></li>
+                    <li><a href="../campus/notice.html">대학생활</a></li>
+                    <li><a href="../fix.html">학사지원</a></li>
+                    <li><a href="../guide/matri.html">입학안내</a></li>
+                </ul>
+                <ul class="f_navitem2">
+                    <li>이사회 회의록 공개</li>
+                    <li>예결산 공개</li>
+                    <li>이메일 무단수집거부</li>
+                    <li>개인정보 처리방침</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
