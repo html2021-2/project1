@@ -77,11 +77,13 @@
 .matri_area .matri_wrap h3{font-size: 60px; margin-bottom: 30px; color: #fff;}
 .matri_area .matri_wrap .matri_list{border-top:4px solid #fff; border-bottom: 4px solid #fff; display: flex; padding: 40px 0 40px;}
 .matri_area .matri_wrap .matri_list li{width: 16.66%; height: 25px; text-align: center; font-size: 25px; color: #fff;}
+.matri_area .matri_wrap .matri_list a:hover, .matri_area .matri_wrap .matri_list a:focus{color: #000;}
 
 .icon_container{width: 100%; height: 630px; background:#fff;display: flex;align-items: center;justify-content: center;}
 .icon_container .icon_list{display: flex;justify-content: space-between;width: 80%;height: 345px;}
 .icon_container .icon_list li{width:20.5%;  background:#a7c7e7; position: relative;}
 .icon_container .icon_list li a{display:block; height: 100%; padding: 35px; font-size: 30px; color: #fff; box-sizing: border-box;}
+.icon_container .icon_list li a:hover, .icon_container .icon_list li a:focus{color: #000;}
 .icon_container .icon_list li img{width: 99px;height: 99px; position: absolute; bottom: 10px; right:10px;}
 
 .matri_notice .sub_title{font-size: 68px; margin: 83px 0 73px; font-weight: 400; position: relative;}
@@ -93,9 +95,11 @@
 .noticeTab .tabpanel{display: none;}
 .noticeTab .tabpanel.active{display: block;}
 .tabpanel table{margin:20px auto;}
+.tabpanel table tr:hover{background: #a7c7e7;}
 .tabpanel table th, .tabpanel table td{border-bottom: 1px solid #a7c7e7;}
 .tabpanel table th, .tabpanel table td{padding: 30px 0;}
 .tabpanel table th{color: #a7c7e7;}
+.tabpanel table tr:hover th{color: #fff;}
 .tabpanel table td{text-align: center;}
 .wid200{width: 200px;}
 .wid850{width: 850px;}
